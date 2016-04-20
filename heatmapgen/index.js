@@ -44,12 +44,12 @@ $("#csvload").change(function()
 		r.readAsText(file);
 		});
 var heatmap;
-var upper = 500000;
+var upper = 2500000;
 function graph(data)
 {
 	var nuConfig = {
   radius: 1,
-  maxOpacity: .5,
+  maxOpacity: .75,
   minOpacity:0
 };
 	heatmap = h337.create({container:document.getElementById("cont")});
@@ -62,6 +62,5 @@ function graph(data)
 }
 document.getElementById("but").addEventListener("click",function()
 {
-	heatmap.setDataMax(upper);
-	
+	document.getElementsByTagName("img")[0].src = document.getElementById("cont").getElementsByTagName("canvas")[0].toDataURL();	
 });
