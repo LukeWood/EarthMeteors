@@ -19,8 +19,9 @@
                      }
                 });*/
 var inp = document.getElementById("csvload");
-var xf = (1000/180)-2;
-var yf = (500/85)/2;
+var CANWIDTH = 1000,CANHEIGHT=500
+var xf = (CANWIDTH/180)-2;
+var yf = (CANHEIGHT/85)/2;
 $("#csvload").change(function()
 		{
 		var file = inp.files[0];
@@ -44,13 +45,20 @@ $("#csvload").change(function()
 		r.readAsText(file);
 		});
 var heatmap;
-var upper = 2500000;
+var upper = 3000000;
 function graph(data)
 {
 	var nuConfig = {
   radius: 1,
-  maxOpacity: .75,
-  minOpacity:0
+  maxOpacity: 1,
+  minOpacity:0,
+  gradient: {
+	  '.8':'white',
+	  '.84':'blue', // for gradient color customization
+	  '.87': 'green',
+    	'.9': 'yellow',
+   	 '.95': 'red'
+  }
 };
 	heatmap = h337.create({container:document.getElementById("cont")});
 	heatmap.configure(nuConfig);
