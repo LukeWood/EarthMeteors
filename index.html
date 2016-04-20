@@ -1,0 +1,67 @@
+<html>
+<head>
+<div id = "hidden" style = "display:none;"></div>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+<meta content="utf-8" http-equiv="encoding">
+<script src = "libs/three.min.js"></script>
+<script src=  "libs/jquery-2.2.3.min.js"></script>
+<style>
+body
+{
+	overflow: hidden;
+}
+#title
+{
+	position:absolute;
+	top:0;
+	right:0;
+	height:14.5%;
+	border: 2px solid red;
+	width:85%;
+	z-index:1;
+	background:gray;
+}
+#container
+{
+	position:absolute;
+	bottom:0;
+	right:0;
+	width:87.5%;
+	border solid white 3px;
+	height:87.5%;
+	float:right;
+}
+#menu
+{
+	z-index:1;
+	position:absolute;
+	width: 15%;
+	top:0;
+	left:0;
+	height: 100%;
+	border: 2px solid red;
+	background: gray;
+}
+</style>
+</head>
+
+<body>
+
+<div id = "title"><center>EARTH</center></div>
+<div id = "menu">
+	<ul>
+		<h2>Menu</h2>
+		<li>Flight</li>
+		<li>Meteorites</li>
+	</ul>
+</div>
+<div id = "container"></div>
+<script src = "scene.js"></script>
+<script src = "earth.js"></script>
+<script src = "grapher.js"></script>
+<script>
+//setTarget("img/asteroids.jpg");
+</script>
+</body>
+
+</html>
