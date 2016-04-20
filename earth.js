@@ -50,8 +50,21 @@ function setTarget(target)
 //AREA START
 var dx = 0;
 var dy = 0;
+var clicked = false;
+var paused = false;
+var pausebut = document.getElementById("pause");
+pausebut.addEventListener("mousedown",function()
+		{
+			paused = !paused;
+			if(!paused)
+				pausebut.src = "img/pause.png"
+			else
+				pausebut.src = "img/play.png"
+		});
 
 setInterval(function()
+		{
+	if(clicked)
 {
 earthMesh.rotation.y += 1/16 * dx;
 //these are actually inverted because 3d
@@ -60,6 +73,18 @@ earthMesh.rotation.x += 1/16 * dy;
 graphMesh.rotation.y += 1/16 * dx;
 //these are actually inverted because 3d
 graphMesh.rotation.x += 1/16 * dy;
+}
+else if(!paused)
+{
+
+earthMesh.rotation.y += 1/128;
+//these are actually inverted because 3d
+earthMesh.rotation.x -= 1/256;
+
+graphMesh.rotation.y += 1/128;
+//these are actually inverted because 3d
+graphMesh.rotation.x -= 1/256;
+}
 mesh.rotation.y += 1/8192;
 renderer.render(scene,camera);
 },50);
@@ -68,14 +93,26 @@ var offsetx = container.offsetLeft;
 var offsety = container.offsetTop;
 var width = container.offsetWidth;
 var height = container.offsetHeight;
-container.addEventListener('mousemove',function(e)
+container.addEventListener('mousedown',function(e)
 		{
+		clicked = true;
+		mousemovefunc(e);
+		});
+container.addEventListener('mouseup',function(e)
+		{
+		clicked = false;
+		dx = 1/16;
+		dy = 1/16;
+		});
+function mousemovefunc(e)
+{
 			var x = e.pageX - offsetx;
 			var y = e.pageY - offsety;
 			x = x - width/2;
 			y = y - height/2;
 			dx = x/width;
 			dy = y/height;
-		});
+}
+container.addEventListener('mousemove',mousemovefunc);
 
 //END AREA EARTH ROTATION

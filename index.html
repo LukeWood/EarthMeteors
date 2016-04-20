@@ -7,61 +7,21 @@
 <script src=  "libs/jquery-2.2.3.min.js"></script>
 <script src = "libs/react.min.js"></script>
 <script src = "libs/react-dom.min.js"></script>
-<style>
-body
-{
-	overflow: hidden;
-}
-#title
-{
-	position:absolute;
-	top:0;
-	right:0;
-	height:14.5%;
-	border: 2px solid red;
-	width:85%;
-	z-index:1;
-	background:gray;
-}
-#container
-{
-	position:absolute;
-	bottom:0;
-	right:0;
-	width:87.5%;
-	border solid white 3px;
-	height:87.5%;
-	float:right;
-}
-#menu
-{
-	z-index:1;
-	position:absolute;
-	width: 15%;
-	top:0;
-	left:0;
-	height: 100%;
-	border: 2px solid red;
-	background: gray;
-}
-.menubut
-{
-width:100%;
-height:30px;
-}
-</style>
+<link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 
 <body>
 
 <div id = "title"><center><h1>EARTH</h1></center></div>
 <div id = "menu">
-	<center><h1>Dataset</h1></center>
+	<center><div id = "datahead"><h1>Datasets</h1></div></center>
+	<div id = "buttoncontainer">
 	<button class = "menubut" onclick = "setTarget('img/Clear.png')">None</button>
 	<button class = "menubut" onclick = "setTarget('img/asteroids.png')">Asteroids</button>
 	<button class = "menubut" onclick = "setTarget('img/population.png')">Population</button>
+	</div>
 </div>
-<div id = "container"></div>
+<div id = "container"><img id = "pause" src="img/pause.png"></div>
 
 
 <script src = "scene.js"></script>
