@@ -30,7 +30,7 @@ scene.add(earthMesh);
 //end stars
 
 var graphmat = new THREE.MeshPhongMaterial();
-var graphgeo = new THREE.SphereGeometry(.51,32,32);
+var graphgeo = new THREE.SphereGeometry(.501,32,32);
 var graphMesh = new THREE.Mesh(graphgeo,graphmat);
 var cont = document.createElement("div");
 function setTarget(target)
@@ -40,7 +40,7 @@ function setTarget(target)
 	image.src =target;
 	graphMesh.material.map = new THREE.Texture(image);
 	graphMesh.material.transparent = true;
-	graphMesh.material.opacity= .5;
+	graphMesh.material.opacity= .85;
 	graphMesh.material.needsUpdate = true;	
 	graphMesh.material.map.needsUpdate = true;
 	scene.add(graphMesh);
