@@ -15,7 +15,7 @@ var bumpmap = document.createElement('img');
 bumpmap.src = 'img/earthbump1k.jpg';
 
 earthMesh.material.bumpMap =  new THREE.Texture(bumpmap);
-earthMesh.material.bumpScale = .05;
+earthMesh.material.bumpScale = .1;
 
 var specularmap = document.createElement('img');
 specularmap.src = 'img/earthspec1k.jpg';
@@ -26,19 +26,7 @@ earthMesh.material.specular = new THREE.Color('grey');
 scene.add(earthMesh);
 //END EARTH
 
-//Create stars
-var stargeo = new THREE.SphereGeometry(90,32,32);
-
-var stars = document.createElement('img');
-stars.src = 'img/stars.jpg';
-var starmat = new THREE.MeshBasicMaterial();
-starmat.map = new THREE.Texture(stars);
-starmat.side = THREE.BackSide;
-
-var mesh = new THREE.Mesh(stargeo,starmat);
-
-scene.add(mesh);
-
+//Create stars:
 //end stars
 
 var graphmat = new THREE.MeshPhongMaterial();
@@ -65,15 +53,15 @@ var dy = 0;
 
 setInterval(function()
 {
-earthMesh.rotation.y += 1/32 * dx;
+earthMesh.rotation.y += 1/16 * dx;
 //these are actually inverted because 3d
-earthMesh.rotation.x += 1/32 * dy;
+earthMesh.rotation.x += 1/16 * dy;
 
-graphMesh.rotation.y += 1/32 * dx;
+graphMesh.rotation.y += 1/16 * dx;
 //these are actually inverted because 3d
-graphMesh.rotation.x += 1/32 * dy;
-
-	renderer.render(scene,camera);
+graphMesh.rotation.x += 1/16 * dy;
+mesh.rotation.y += 1/8192;
+renderer.render(scene,camera);
 },50);
 
 var offsetx = container.offsetLeft;
