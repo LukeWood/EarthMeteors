@@ -5,6 +5,8 @@
 <meta content="utf-8" http-equiv="encoding">
 <script src = "libs/three.min.js"></script>
 <script src=  "libs/jquery-2.2.3.min.js"></script>
+<script src = "libs/react.min.js"></script>
+<script src = "libs/react-dom.min.js"></script>
 <style>
 body
 {
@@ -42,21 +44,25 @@ body
 	border: 2px solid red;
 	background: gray;
 }
+.menubut
+{
+width:100%;
+height:30px;
+}
 </style>
 </head>
 
 <body>
 
-<div id = "title"><center>EARTH</center></div>
+<div id = "title"><center><h1>EARTH</h1></center></div>
 <div id = "menu">
-	<ul>
-		<h2>Menu</h2>
-		<li onclick = "setTarget('img/population.png');">Population</li>
-		<li>Flight</li>
-		<li onclick = "setTarget('img/asteroids.png');">Asteroids</li>
-	</ul>
+	<center><h1>Menu</h1></center>
+	<button class = "menubut" onclick = "setTarget('img/asteroids.png')">Asteroids</button>
+	<button class = "menubut" onclick = "setTarget('img/population.png')">Population</button>
 </div>
 <div id = "container"></div>
+
+
 <script src = "scene.js"></script>
 <script src = "earth.js"></script>
 <script src = "grapher.js"></script>
