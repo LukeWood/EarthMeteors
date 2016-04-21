@@ -35,6 +35,11 @@ var graphMesh = new THREE.Mesh(graphgeo,graphmat);
 var targ;
 function setTarget(sender,target)
 {
+	var all = document.getElementsByClassName("menubut");
+	for(var i = 0; i < all.length; i++)
+	{
+		all[i].style.background = "#fff";
+	}
 	sender.style.background = "#4faf4f";
 	if(targ == target)
 	{
