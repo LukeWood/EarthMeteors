@@ -57,9 +57,9 @@ pausebut.addEventListener("mousedown",function()
 		{
 			paused = !paused;
 			if(!paused)
-				pausebut.src = "img/pause.png"
+				pausebut.src = "img/pause.png";
 			else
-				pausebut.src = "img/play.png"
+				pausebut.src = "img/play.png";
 		});
 
 setInterval(function()
@@ -78,12 +78,12 @@ else if(!paused)
 {
 
 earthMesh.rotation.y += 1/128;
+earthMesh.rotation.x -= 1/2048;
 //these are actually inverted because 3d
-earthMesh.rotation.x -= 1/256;
 
 graphMesh.rotation.y += 1/128;
+graphMesh.rotation.x -= 1/2048;
 //these are actually inverted because 3d
-graphMesh.rotation.x -= 1/256;
 }
 mesh.rotation.y += 1/8192;
 renderer.render(scene,camera);
