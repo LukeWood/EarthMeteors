@@ -1,3 +1,4 @@
+
 //CREATE SCENE
 	var container = document.getElementById("container");
 	var renderer;
@@ -47,3 +48,11 @@ mesh.material.map = new THREE.Texture(stars);
 mesh.material.side = THREE.BackSide;
 mesh.material.map.needsUpdate = true;
 scene.add(mesh);
+
+window.onresize = resizestuff;
+
+function resizestuff() 
+{
+	renderer.setSize( container.offsetWidth, container.offsetHeight);
+	camera.aspect = container.offsetWidth/container.offsetHeight;
+}
