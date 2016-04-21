@@ -32,10 +32,16 @@ scene.add(earthMesh);
 var graphmat = new THREE.MeshPhongMaterial();
 var graphgeo = new THREE.SphereGeometry(.501,32,32);
 var graphMesh = new THREE.Mesh(graphgeo,graphmat);
-var cont = document.createElement("div");
-function setTarget(target)
+var targ;
+function setTarget(sender,target)
 {
-	document.body.appendChild(cont);
+	sender.style.background = "#4faf4f";
+	if(targ == target)
+	{
+		target = "img/Clear.png";
+		sender.style.background = "#fff";
+	}
+	targ = target;
 	var image = document.createElement("img");
 	image.src =target;
 	graphMesh.material.map = new THREE.Texture(image);
