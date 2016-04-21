@@ -5,15 +5,13 @@
 <meta content="utf-8" http-equiv="encoding">
 <script src = "libs/three.min.js"></script>
 <script src=  "libs/jquery-2.2.3.min.js"></script>
- <link rel="stylesheet" type="text/css"
-          href="https://fonts.googleapis.com/css?family=fire-animation">
 
 <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 
 <body id = "attr">
 
-<div id = "title"><center><h1 class = "noselect" id = "titletext">Earth Stats: See the Facts</h1></center></div>
+<div id = "title"><center><h1 class = "noselect" id = "titletext">Earth Stats<br>See the Facts</h1></center></div>
 <div id = "menu">
 	<center><div id = "datahead"><h1 id = "datatitle" class = "noselect">Datasets</h1></div></center>
 	<div id = "buttoncontainer">
@@ -21,10 +19,35 @@
 	<button class = "menubut" onclick = "setTarget(this,'img/population.png')">Population</button>
 	</div>
 </div>
+
+<div id = "contact">
+	<div id = "contactinner">
+	</div>
+</div>
+
 <div id = "contcont">
 <div id = "container"><img id = "pause" src="img/pause.png"></div>
 </div>
-<div id = "credits"><center class = "noselect"> &copy Luke Wood 2016</center></div>
+<div id = "credits"><center class = "noselect">
+	<a id = "contactme" style = "cursor:pointer;" onclick = "togglediv('contact');">Contact Me</a> &#8226 &copy Luke Wood 2016 &#8226 <a href = "https://github.com/LukeWoodSMU/EarthMeteors">Code Hosted on Github</a>
+</center></div>
+
+<script>
+function togglediv(target)
+{
+var targ = document.getElementById(target);
+	if(targ.style.maxHeight=="0%")
+	{
+		targ.style.maxHeight="0px";
+		targ.style.border ="solid 1px white";
+	}
+	else
+	{
+		targ.style.maxHeight="85.5%";
+		targ.style.border="solid 2px white";
+	}
+}
+</script>
 
 <script src = "scene.js"></script>
 <script src = "earth.js"></script>
