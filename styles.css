@@ -12,7 +12,7 @@ body
 	height:14.5%;
 	border: 2px solid white;
 	width:85%;
-	z-index:1;
+	z-index:4;
 	background:#4faf4f;
 }
 #titletext
@@ -37,7 +37,7 @@ body
 }
 #menu
 {
-	z-index:1;
+	z-index:5;
 	position:absolute;
 	width: 15%;
 	top:0;
@@ -90,9 +90,9 @@ height:30px;
 	bottom:22px;
 	right:22.5%;
 	width:42.5%;
-	height:85.5%;
+	height:83.5%;
 	background-image:url("img/jungle.png");
-	z-index:6;
+	z-index:3;
 	-moz-transition: 1s;
     	-ms-transition: 1s;
     	-o-transition: 1s;
