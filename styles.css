@@ -102,7 +102,8 @@ height:30px;
 #contactinner
 {
 	position:absolute;
-	background:white;
+	background:#999999;
+	border: solid white 2px;
 	width:80%;
 	top:10%;
 	left:10%;
