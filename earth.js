@@ -81,9 +81,9 @@ earthMesh.rotation.y += 1/4 * dx;
 //these are actually inverted because 3d
 earthMesh.rotation.x += 1/4 * dy;
 
-graphMesh.rotation.y += 1/16 * dx;
+graphMesh.rotation.y += 1/4 * dx;
 //these are actually inverted because 3d
-graphMesh.rotation.x += 1/16 * dy;
+graphMesh.rotation.x += 1/4 * dy;
 }
 else if(!paused)
 {
