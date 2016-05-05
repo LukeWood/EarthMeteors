@@ -19,8 +19,8 @@
                      }
                 });*/
 var inp = document.getElementById("csvload");
-var CANWIDTH = 1000,CANHEIGHT=500
-var xf = (CANWIDTH/180)-2;
+var CANWIDTH = 3000,CANHEIGHT=1500
+var xf = (CANWIDTH/180)/2;
 var yf = (CANHEIGHT/85)/2;
 $("#csvload").change(function()
 		{
@@ -33,13 +33,15 @@ $("#csvload").change(function()
 			var points = [];
 			for(var i = 0; i < data.length; i++)
 			{
-				var xval = DegToRad(parseFloat(vals[6]));
-				var yval = DegToRad(parseFloat(vals[5]));
 				vals = data[i].split(',');
+				var xval = (parseFloat(vals[1]));
+				var yval = (parseFloat(vals[2]));
+				var xyvals = new Array();
+			       	//LatLonToUTMXY(xval,yval,0,xyvals); 
 				points.push({
-					x:500+parseFloat(vals[6])*yf,
-					y:250-parseFloat(vals[5])*xf,
-					value:parseInt(vals[4])
+					x:CANWIDTH/2-yval*yf,
+					y:CANHEIGHT/2-xval*xf,
+					value:1
 					});
 			}
 			graph(points);
@@ -47,20 +49,20 @@ $("#csvload").change(function()
 		r.readAsText(file);
 		});
 var heatmap;
-var upper = 3000000;
+var upper = 50;
 function graph(data)
 {
 	var nuConfig = {
-  radius: 1,
+  radius: .01,
   maxOpacity: 1,
   minOpacity:0,
-  gradient: {
+  /*gradient: {
 	  '.8':'white',
 	  '.84':'blue', // for gradient color customization
 	  '.87': 'green',
     	'.9': 'yellow',
    	 '.95': 'red'
-  }
+  }*/
 };
 	heatmap = h337.create({container:document.getElementById("cont")});
 	heatmap.configure(nuConfig);
