@@ -33,6 +33,8 @@ $("#csvload").change(function()
 			var points = [];
 			for(var i = 0; i < data.length; i++)
 			{
+				var xval = DegToRad(parseFloat(vals[6]));
+				var yval = DegToRad(parseFloat(vals[5]));
 				vals = data[i].split(',');
 				points.push({
 					x:500+parseFloat(vals[6])*yf,
