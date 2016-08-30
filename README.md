@@ -1,2 +1,2 @@
 # EarthStats
-[a link](https://lukewoodsmu.github.io/EarthMeteors/) See the project here!
+[See the project in action here!](https://lukewoodsmu.github.io/EarthMeteors/)
