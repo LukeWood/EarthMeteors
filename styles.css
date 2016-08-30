@@ -63,6 +63,10 @@ height:30px;
 	position:absolute;
 	top:14.5%;
 }
+.bold
+{
+	font-weight:bold;
+}
 .noselect {
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none;   /* Chrome/Safari/Opera */
