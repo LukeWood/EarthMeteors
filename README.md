@@ -1,2 +1,2 @@
-# EarthMeteors
-display of where meteors have hit earth in js
+# EarthStats
+[a link](https://lukewoodsmu.github.io/EarthMeteors/) See the project here!
