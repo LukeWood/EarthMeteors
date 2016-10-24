@@ -52,7 +52,7 @@ function setTarget(sender,target)
 	graphMesh.material.map = new THREE.Texture(image);
 	graphMesh.material.transparent = true;
 	graphMesh.material.opacity= .85;
-	graphMesh.material.needsUpdate = true;	
+	graphMesh.material.needsUpdate = true;
 	graphMesh.material.map.needsUpdate = true;
 	scene.add(graphMesh);
 }
@@ -104,6 +104,7 @@ var offsetx = container.offsetLeft;
 var offsety = container.offsetTop;
 var width = container.offsetWidth;
 var height = container.offsetHeight;
+container.style.cursor = "move";
 container.addEventListener('mousedown',function(e)
 		{
 		clicked = true;
